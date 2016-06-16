@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+html{
+  font-size: 100%;
+}
+
+body{
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+  background: white;
+  text-align: center;
+  font-family: 'helvetica', sans-serif;
+}
+
+.main{
+  width: 8*5em;
+  height: 8*5em;
+  display: inline-block;
+}
+
+.box{
+  background-color: grey;
+  margin: 0 -3px;
+  width: 5em;
+  height: 5em;
+  display: inline-block;
+  border: 1px solid black;
+}
+.boxx{
+  background-color: white;
+  margin: 0 -3px;
+  width: 5em;
+  height: 5em;
+  display: inline-block;
+  border: 1px solid black;
+}
