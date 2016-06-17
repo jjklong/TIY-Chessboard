@@ -52,6 +52,8 @@ body {
   margin: -2em -4px; }
 
 .box {
+  padding-top: 0.5em;
+  padding-right: 0.1em;
   background-color: white;
   margin: -4px;
   width: 5em;
@@ -60,6 +62,8 @@ body {
   border: 1px solid black; }
 
 .boxx {
+  padding-top: 0.5em;
+  padding-right: 0.1em;
   background-color: grey;
   margin: -4px;
   width: 5em;
