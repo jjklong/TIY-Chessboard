@@ -81,7 +81,7 @@ board [4][3] = ' ';
 console.log(board.join('\n'));
 **********************************/
   var counter = 0;
-$('#move').click(function (e){
+$('#forwardMove').click(function (e){
   e.preventDefault();
   counter++;
   console.log(counter);
@@ -91,7 +91,7 @@ $('#move').click(function (e){
       var move1 = board[6][3];
       board[4][3] = board[6][3];
       board[6][3] = ' ';
-      $('.chessRow_four').find('#r4c3').addClass(move1);   //ADDS TO EVERY COL4
+      $('.chessRow_four').find('#r4c3').addClass(move1).css('background-color','lightblue');   //ADDS TO EVERY COL4
       $('.chessRow_six').find('#r6c3').removeClass(move1);
       console.log(move1);
       break;
