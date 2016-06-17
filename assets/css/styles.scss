@@ -16,14 +16,50 @@ body{
 }
 
 .main{
-  width: 8*5em;
-  height: 8*5em;
+  width: 9*5em;
+  height: 9*5em;
   display: inline-block;
+  #move{
+    margin: 2em 0 5em 0;
+  }
+}
+
+.cRow{
+  display: flex;
+}
+.numberMarkerL{
+  float: left;
+  margin-top: 8em;
+  margin-bottom: 0em;
+}
+.numberMarkerR{
+  float: right;
+  margin-top: 8em;
+  margin-bottom: 0em;
+}
+.NMark{
+  width: 5em;
+  height: 5em;
+  margin: -4px;
+}
+.letterMarkerT{
+  display: flex;
+}
+.letterMarkerB{
+  display: flex;
+  margin-top: 2.5em;
+  padding-top: 1em;
+}
+.LMark{
+  width: 5em;
+  height: 5em;
+  display: inline-block;
+  margin: -2em -4px;
 }
 
 .box{
   background-color: grey;
-  margin: 0 -3px;
+  margin: -4px;
   width: 5em;
   height: 5em;
   display: inline-block;
@@ -31,9 +67,13 @@ body{
 }
 .boxx{
   background-color: white;
-  margin: 0 -3px;
+  margin: -4px;
   width: 5em;
   height: 5em;
   display: inline-block;
   border: 1px solid black;
+}
+
+i{
+  margin: 0.2em 0em 0em -0.15em;
 }

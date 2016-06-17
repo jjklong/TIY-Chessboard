@@ -22,6 +22,12 @@
 //    9)  [7][6] --> [5][5]
 
 //PUT THE ROWS INTO INDIVIDUAL ARRAYS = VERY WET, MAKE IT DRY LATER
+var row0arr = [];
+$('i','.chessRow_zero').each(function(){
+  row0arr.push($(this).attr('class'));
+});
+console.log(row0arr);
+
 var row1arr = [];
 $('i','.chessRow_one').each(function(){
   row1arr.push($(this).attr('class'));
@@ -64,13 +70,7 @@ $('i','.chessRow_seven').each(function(){
 });
 console.log(row7arr);
 
-var row8arr = [];
-$('i','.chessRow_eight').each(function(){
-  row8arr.push($(this).attr('class'));
-});
-console.log(row8arr);
-
-var board = [row1arr, row2arr, row3arr, row4arr, row5arr, row6arr, row7arr, row8arr];
+var board = [row0arr, row1arr, row2arr, row3arr, row4arr, row5arr, row6arr, row7arr];
 
 /***********CLASS DEMO************
 console.log(board.join('\n') + '\n\n');
@@ -86,14 +86,76 @@ $('#move').click(function (e){
   counter++;
   console.log(counter);
 
-
   switch (true) {
     case counter == 1:
       var move1 = board[6][3];
       board[4][3] = board[6][3];
       board[6][3] = ' ';
-      $('i','.col4').addClass(move1);   //ADDS TO EVERY COL4
+      $('.chessRow_four').find('#r4c3').addClass(move1);   //ADDS TO EVERY COL4
+      $('.chessRow_six').find('#r6c3').removeClass(move1);
       console.log(move1);
+      break;
+    case counter == 2:
+      var move2 = board[0][6];
+      board[2][5] = board[0][6];
+      board[0][6] = ' ';
+      $('.chessRow_two').find('#r2c5').addClass(move2);
+      $('.chessRow_zero').find('#r0c6').removeClass(move2);
+      console.log(move2);
+      break;
+    case counter == 3:
+      var move3 = board[6][2];
+      board[4][2] = board[6][2];
+      board[6][2] = ' ';
+      $('.chessRow_four').find('#r4c2').addClass(move3);
+      $('.chessRow_six').find('#r6c2').removeClass(move3);
+      break;
+    case counter == 4:
+      var move4 = board[1][4];
+      board[2][4] = board[1][4];
+      board[1][4] = ' ';
+      $('.chessRow_two').find('#r2c4').addClass(move4);
+      $('.chessRow_one').find('#r1c4').removeClass(move4);
+      break;
+//    5)  [6][6] --> [5][6]
+    case counter == 5:
+      var move5 = board[6][6];
+      board[5][6] = board[6][6];
+      board[6][6] = ' ';
+      $('.chessRow_five').find('#r5c6').addClass(move5);
+      $('.chessRow_six').find('#r6c6').removeClass(move5);
+      break;
+//    6)  [1][3] --> [3][3]
+    case counter == 6:
+      var move6 = board[1][3];
+      board[3][3] = board[1][3];
+      board[1][3] = ' ';
+      $('.chessRow_three').find('#r3c3').addClass(move6);
+      $('.chessRow_one').find('#r1c3').removeClass(move6);
+      break;
+//    7)  [7][5] --> [6][6]
+    case counter == 7:
+      var move7 = board[7][5];
+      board[6][6] = board[7][5];
+      board[7][5] = ' ';
+      $('.chessRow_six').find('#r6c6').addClass(move7);
+      $('.chessRow_seven').find('#r7c5').removeClass(move7);
+      break;
+//    8)  [0][5] --> [1][4]
+    case counter == 8:
+      var move8 = board[0][5];
+      board[1][4] = board[0][5];
+      board[0][5] = ' ';
+      $('.chessRow_one').find('#r1c4').addClass(move8);
+      $('.chessRow_zero').find('#r0c5').removeClass(move8);
+      break;
+//    9)  [7][6] --> [5][5]
+    case counter == 9:
+      var move9 = board[7][6];
+      board[5][5] = board[7][6];
+      board[7][6] = ' ';
+      $('.chessRow_five').find('#r5c5').addClass(move9);
+      $('.chessRow_seven').find('#r7c6').removeClass(move9);
       break;
   }
 
