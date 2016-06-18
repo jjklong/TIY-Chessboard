@@ -10,7 +10,7 @@ body{
   font-size: 1em;
   padding: 0;
   margin: 0;
-  background: white;
+  background: #b18c82;
   text-align: center;
   font-family: 'helvetica', sans-serif;
 }
@@ -19,8 +19,26 @@ body{
   width: 9*5em;
   height: 9*5em;
   display: inline-block;
-  #forwardMove{
-    margin: 2em 0 5em 0;
+  #home{
+    margin-top: 1em;
+    margin-bottom: 3em;
+  }
+  i{
+    padding: 2.4em 1.2em 1em 0.5em;
+  }
+  .p2{
+    color: white;
+    &:before{
+      box-shadow: 4px 3px white;
+      border-radius: 50%;
+    }
+  }
+  .p1{
+    color: black;
+    &:before{
+      box-shadow: 4px 3px black;
+      border-radius: 50%;
+    }
   }
 }
 
@@ -29,12 +47,12 @@ body{
 }
 .numberMarkerL{
   float: left;
-  margin-top: 8em;
+  margin-top: 6em;
   margin-bottom: 0em;
 }
 .numberMarkerR{
   float: right;
-  margin-top: 8em;
+  margin-top: 6em;
   margin-bottom: 0em;
 }
 .NMark{
@@ -60,7 +78,7 @@ body{
 .box{
   padding-top: 0.5em;
   padding-right: 0.1em;
-  background-color: white;
+  background-color: #62b7d1;
   margin: -4px;
   width: 5em;
   height: 5em;
@@ -70,7 +88,7 @@ body{
 .boxx{
   padding-top: 0.5em;
   padding-right: 0.1em;
-  background-color: grey;
+  background-color: #b7d162;
   margin: -4px;
   width: 5em;
   height: 5em;
@@ -78,7 +96,27 @@ body{
   border: 1px solid black;
 }
 
-i{
-  padding: 14px;
-  margin: 0em 0em 0em -0.1em;
+#forwardMove{
+  margin: 0 1em;
+  box-shadow: -5px 2.5px 1px 0px black;
+  background-color: #62b7d1;
+  border-radius: 50%;
+  border: 2px solid white;
+  i{
+    margin: .5em;
+  }
+}
+#backwardMove{
+  @extend #forwardMove;
+  box-shadow: 5px 2.5px 1px 0px black;
+}
+
+.buttons{
+  position: absolute;
+  bottom: 3%;
+  right: 40%;
+  cursor: pointer;
+  :focus{
+    outline: none;
+  }
 }
