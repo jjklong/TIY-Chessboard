@@ -82,34 +82,8 @@ board [4][3] = ' ';
 
 console.log(board.join('\n'));
 **********************************/
+
   var counter = 0;
-
-
-//BUTTONS MOVE COUNTER BACK-- AND FORTH++
-//ALL BUTTONS MOVE COUNTER BACK=0, FORWARD=9
-
-  var forward = $('#forwardMove').click(function(e){
-      e.preventDefault();
-      counter++;
-      console.log(counter);
-    });
-  var backward = $('#backwardMove').click(function(e){
-      e.preventDefault();
-      counter--;
-      console.log(counter);
-    });
-  var forwardAll = $('#forwardAll').click(function(e){
-      e.preventDefault();
-      counter = 9;
-      console.log(counter);
-    });
-  var backwardAll = $('#backwardAll').click(function(e){
-      e.preventDefault();
-      counter = 0;
-      console.log(counter);
-    });
-
-
 
   switch (counter) {
     case 1:
@@ -184,6 +158,29 @@ console.log(board.join('\n'));
       break;
   }
 
-});
+  //BUTTONS MOVE COUNTER BACK-- AND FORTH++
+  //ALL BUTTONS MOVE COUNTER BACK=0, FORWARD=9
 
-// });
+    $('#forwardMove').click(function(e){
+      target = e.target;
+        e.preventDefault();
+        counter++;
+        console.log(counter);
+      });
+    $('#backwardMove').click(function(e){
+        e.preventDefault();
+        counter--;
+        console.log(counter);
+      });
+    $('#forwardAll').click(function(e){
+        e.preventDefault();
+        counter = 9;
+        console.log(counter);
+      });
+    $('#backwardAll').click(function(e){
+        e.preventDefault();
+        counter = 0;
+        console.log(counter);
+      });
+
+});
