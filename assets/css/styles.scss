@@ -20,25 +20,19 @@ body{
   height: 9*5em;
   display: inline-block;
   #home{
+    border: none;
+    opacity: 0;
     margin-top: 1em;
     margin-bottom: 3em;
   }
   i{
-    padding: 2.4em 1.2em 1em 0.5em;
+    padding: 2.4em 1.1em 1em 0.6em;
   }
   .p2{
     color: white;
-    &:before{
-      box-shadow: 4px 3px white;
-      border-radius: 50%;
-    }
   }
   .p1{
     color: black;
-    &:before{
-      box-shadow: 4px 3px black;
-      border-radius: 50%;
-    }
   }
 }
 
@@ -109,6 +103,12 @@ body{
 #backwardMove{
   @extend #forwardMove;
   box-shadow: 5px 2.5px 1px 0px black;
+}
+#backwardAll{
+  @extend #backwardMove;
+}
+#forwardAll{
+  @extend #forwardMove;
 }
 
 .buttons{
