@@ -282,4 +282,23 @@ function rewind(counter){
   $('.chessRow_five').find('#r5c5').removeClass().css('background-color','');
   $('.chessRow_five').find('#r5c6').removeClass().css('background-color','');
 }
+function fastforward(counter){
+  counter = 9;
+  $('.chessRow_zero').find('#r0c6').removeClass();
+  $('.chessRow_zero').find('#r0c5').removeClass();
+  $('.chessRow_one').find('#r1c3').removeClass();
+  $('.chessRow_one').find('#r1c4').removeClass().addClass("flaticon-bishop p1").css('background-color','lightblue');
+  $('.chessRow_six').find('#r6c2').removeClass();
+  $('.chessRow_six').find('#r6c3').removeClass();
+  $('.chessRow_six').find('#r6c6').removeClass().addClass("flaticon-bishop p2").css('background-color','lightblue');
+  $('.chessRow_seven').find('#r7c5').removeClass();
+  $('.chessRow_seven').find('#r7c6').removeClass();
+    $('.chessRow_two').find('#r2c4').addClass("flaticon-chess-pawn p1").css('background-color','lightblue');
+    $('.chessRow_two').find('#r2c5').addClass("flaticon-horse-black-head-shape-of-a-chess-piece p1").css('background-color','lightblue');
+    $('.chessRow_three').find('#r3c3').addClass("flaticon-chess-pawn p1").css('background-color','lightblue');
+  $('.chessRow_four').find('#r4c3').addClass("flaticon-chess-pawn p2").css('background-color','lightblue');
+  $('.chessRow_four').find('#r4c2').addClass("flaticon-chess-pawn p2").css('background-color','lightblue');
+  $('.chessRow_five').find('#r5c5').addClass("flaticon-horse-black-head-shape-of-a-chess-piece p2").css('background-color','lightblue');
+  $('.chessRow_five').find('#r5c6').addClass("flaticon-chess-pawn p2").css('background-color','lightblue');
+}
 });
