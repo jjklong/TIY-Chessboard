@@ -103,13 +103,12 @@ console.log(board.join('\n'));
   $('#forwardAll').click(function(e){
       e.preventDefault();
       counter = 9;
-      click(counter);
+      fastforward(counter);
       console.log(counter);
     });
   $('#backwardAll').click(function(e){
       e.preventDefault();
-      counter = 0;
-      click(counter);
+      rewind(counter=0);
       console.log(counter);
     });
 
@@ -143,11 +142,11 @@ function click(counter){
       var move4 = board[1][4];
       board[2][4] = board[1][4];
       board[2][4] = '';
-//EXCEPTION - had to add specific icon class in order to work. with move4, following the pattern from the other cases, it would return an empty string as the class agian.
+      //EXCEPTION - had to add specific icon class in order to work. with move4, following the pattern from the other cases, it would return an empty string as the class agian.
       $('.chessRow_two').find('#r2c4').addClass("flaticon-chess-pawn p1").css('background-color','lightblue');
       $('.chessRow_one').find('#r1c4').removeClass();
       break;
-//    5)  [6][6] --> [5][6]
+  //    5)  [6][6] --> [5][6]
     case 5:
       var move5 = board[6][6];
       board[5][6] = board[6][6];
@@ -155,7 +154,7 @@ function click(counter){
       $('.chessRow_five').find('#r5c6').addClass("flaticon-chess-pawn p2").css('background-color','lightblue');
       $('.chessRow_six').find('#r6c6').removeClass();
       break;
-//    6)  [1][3] --> [3][3]
+  //    6)  [1][3] --> [3][3]
     case 6:
       var move6 = board[1][3];
       board[3][3] = board[1][3];
@@ -163,7 +162,7 @@ function click(counter){
       $('.chessRow_three').find('#r3c3').addClass(move6).css('background-color','lightblue');
       $('.chessRow_one').find('#r1c3').removeClass();
       break;
-//    7)  [7][5] --> [6][6]
+  //    7)  [7][5] --> [6][6]
     case 7:
       var move7 = board[7][5];
       board[6][6] = board[7][5];
@@ -171,7 +170,7 @@ function click(counter){
       $('.chessRow_six').find('#r6c6').addClass(move7).css('background-color','lightblue');
       $('.chessRow_seven').find('#r7c5').removeClass();
       break;
-//    8)  [0][5] --> [1][4]
+  //    8)  [0][5] --> [1][4]
     case 8:
       var move8 = board[0][5];
       board[1][4] = board[0][5];
@@ -179,7 +178,7 @@ function click(counter){
       $('.chessRow_one').find('#r1c4').addClass(move8).css('background-color','lightblue');
       $('.chessRow_zero').find('#r0c5').removeClass();
       break;
-//    9)  [7][6] --> [5][5]
+  //    9)  [7][6] --> [5][5]
     case 9:
       var move9 = board[7][6];
       board[5][5] = board[7][6];
@@ -222,7 +221,7 @@ function down(counter){
       $('.chessRow_two').find('#r2c4').removeClass().css('background-color','');
       $('.chessRow_one').find('#r1c4').addClass("flaticon-chess-pawn p1").css('background-color','');
       break;
-//    5)  [6][6] --> [5][6]
+  //    5)  [6][6] --> [5][6]
     case 4:
       var move5 = board[6][6];
       board[5][6] = board[6][6];
@@ -230,7 +229,7 @@ function down(counter){
       $('.chessRow_five').find('#r5c6').removeClass().css('background-color','');
       $('.chessRow_six').find('#r6c6').addClass("flaticon-chess-pawn p2").css('background-color','');
       break;
-//    6)  [1][3] --> [3][3]
+  //    6)  [1][3] --> [3][3]
     case 5:
       var move6 = board[1][3];
       board[3][3] = board[1][3];
@@ -238,7 +237,7 @@ function down(counter){
       $('.chessRow_three').find('#r3c3').removeClass().css('background-color','');
       $('.chessRow_one').find('#r1c3').addClass(move6).css('background-color','');
       break;
-//    7)  [7][5] --> [6][6]
+  //    7)  [7][5] --> [6][6]
     case 6:
       var move7 = board[7][5];
       board[6][6] = board[7][5];
@@ -246,7 +245,7 @@ function down(counter){
       $('.chessRow_six').find('#r6c6').removeClass().css('background-color','');
       $('.chessRow_seven').find('#r7c5').addClass(move7).css('background-color','');
       break;
-//    8)  [0][5] --> [1][4]
+  //    8)  [0][5] --> [1][4]
     case 7:
       var move8 = board[0][5];
       board[1][4] = board[0][5];
@@ -254,7 +253,7 @@ function down(counter){
       $('.chessRow_one').find('#r1c4').removeClass().css('background-color','');
       $('.chessRow_zero').find('#r0c5').addClass(move8).css('background-color','');
       break;
-//    9)  [7][6] --> [5][5]
+  //    9)  [7][6] --> [5][5]
     case 8:
       var move9 = board[7][6];
       board[5][5] = board[7][6];
@@ -264,8 +263,23 @@ function down(counter){
       break;
   }
 }
-
-
-
-
+function rewind(counter){
+  counter = 0;
+  $('.chessRow_zero').find('#r0c6').addClass(row0arr[6]);
+  $('.chessRow_zero').find('#r0c5').addClass(row0arr[5]);
+  $('.chessRow_one').find('#r1c3').addClass(row1arr[3]);
+  $('.chessRow_one').find('#r1c4').addClass("flaticon-chess-pawn p1").css('background-color','');
+  $('.chessRow_six').find('#r6c2').addClass(row6arr[2]);
+  $('.chessRow_six').find('#r6c3').addClass(row6arr[3]);
+  $('.chessRow_six').find('#r6c6').addClass("flaticon-chess-pawn p2").css('background-color','');
+  $('.chessRow_seven').find('#r7c5').addClass(row7arr[5]);
+  $('.chessRow_seven').find('#r7c6').addClass(row7arr[6]);
+  $('.chessRow_two').find('#r2c4').removeClass().css('background-color','');
+  $('.chessRow_two').find('#r2c5').removeClass().css('background-color','');
+  $('.chessRow_three').find('#r3c3').removeClass().css('background-color','');
+  $('.chessRow_four').find('#r4c3').removeClass().css('background-color','');
+  $('.chessRow_four').find('#r4c2').removeClass().css('background-color','');
+  $('.chessRow_five').find('#r5c5').removeClass().css('background-color','');
+  $('.chessRow_five').find('#r5c6').removeClass().css('background-color','');
+}
 });
