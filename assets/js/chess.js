@@ -85,6 +85,9 @@ console.log(board.join('\n'));
 
   var counter = 0;
 
+  //BUTTONS MOVE COUNTER BACK-- AND FORTH++
+  //ALL BUTTONS MOVE COUNTER BACK=0, FORWARD=9
+
   $('#forwardMove').click(function(e){
       e.preventDefault();
       counter++;
@@ -94,7 +97,7 @@ console.log(board.join('\n'));
   $('#backwardMove').click(function(e){
       e.preventDefault();
       counter--;
-      click(counter);
+      down(counter);
       console.log(counter);
     });
   $('#forwardAll').click(function(e){
@@ -116,77 +119,152 @@ function click(counter){
     case 1:
       var move1 = board[6][3];
       board[4][3] = board[6][3];
-      board[4][3] = ' ';
+      board[4][3] = '';
       $('.chessRow_four').find('#r4c3').addClass(move1).css('background-color','lightblue');   //ADDS TO EVERY COL4
-      $('.chessRow_six').find('#r6c3').removeClass(move1);
+      $('.chessRow_six').find('#r6c3').removeClass();
       console.log(move1);
       break;
     case 2:
       var move2 = board[0][6];
       board[2][5] = board[0][6];
-      board[0][6] = ' ';
+      board[2][5] = '';
       $('.chessRow_two').find('#r2c5').addClass(move2).css('background-color','lightblue');
-      $('.chessRow_zero').find('#r0c6').removeClass(move2);
+      $('.chessRow_zero').find('#r0c6').removeClass();
       console.log(move2);
       break;
     case 3:
       var move3 = board[6][2];
       board[4][2] = board[6][2];
-      board[6][2] = ' ';
+      board[4][2] = '';
       $('.chessRow_four').find('#r4c2').addClass(move3).css('background-color','lightblue');
-      $('.chessRow_six').find('#r6c2').removeClass(move3);
+      $('.chessRow_six').find('#r6c2').removeClass();
       break;
     case 4:
       var move4 = board[1][4];
       board[2][4] = board[1][4];
-      board[1][4] = ' ';
-      $('.chessRow_two').find('#r2c4').addClass(move4).css('background-color','lightblue');
-      $('.chessRow_one').find('#r1c4').removeClass(move4);
+      board[2][4] = '';
+//EXCEPTION - had to add specific icon class in order to work. with move4, following the pattern from the other cases, it would return an empty string as the class agian.
+      $('.chessRow_two').find('#r2c4').addClass("flaticon-chess-pawn p1").css('background-color','lightblue');
+      $('.chessRow_one').find('#r1c4').removeClass();
       break;
 //    5)  [6][6] --> [5][6]
     case 5:
       var move5 = board[6][6];
       board[5][6] = board[6][6];
-      board[6][6] = ' ';
-      $('.chessRow_five').find('#r5c6').addClass(move5).css('background-color','lightblue');
-      $('.chessRow_six').find('#r6c6').removeClass(move5);
+      board[5][6] = '';
+      $('.chessRow_five').find('#r5c6').addClass("flaticon-chess-pawn p2").css('background-color','lightblue');
+      $('.chessRow_six').find('#r6c6').removeClass();
       break;
 //    6)  [1][3] --> [3][3]
     case 6:
       var move6 = board[1][3];
       board[3][3] = board[1][3];
-      board[1][3] = ' ';
+      board[3][3] = '';
       $('.chessRow_three').find('#r3c3').addClass(move6).css('background-color','lightblue');
-      $('.chessRow_one').find('#r1c3').removeClass(move6);
+      $('.chessRow_one').find('#r1c3').removeClass();
       break;
 //    7)  [7][5] --> [6][6]
     case 7:
       var move7 = board[7][5];
       board[6][6] = board[7][5];
-      board[7][5] = ' ';
+      board[6][6] = '';
       $('.chessRow_six').find('#r6c6').addClass(move7).css('background-color','lightblue');
-      $('.chessRow_seven').find('#r7c5').removeClass(move7);
+      $('.chessRow_seven').find('#r7c5').removeClass();
       break;
 //    8)  [0][5] --> [1][4]
     case 8:
       var move8 = board[0][5];
       board[1][4] = board[0][5];
-      board[0][5] = ' ';
+      board[1][4] = '';
       $('.chessRow_one').find('#r1c4').addClass(move8).css('background-color','lightblue');
-      $('.chessRow_zero').find('#r0c5').removeClass(move8);
+      $('.chessRow_zero').find('#r0c5').removeClass();
       break;
 //    9)  [7][6] --> [5][5]
     case 9:
       var move9 = board[7][6];
       board[5][5] = board[7][6];
-      board[7][6] = ' ';
+      board[5][5] = '';
       $('.chessRow_five').find('#r5c5').addClass(move9).css('background-color','lightblue');
-      $('.chessRow_seven').find('#r7c6').removeClass(move9);
+      $('.chessRow_seven').find('#r7c6').removeClass();
       break;
   }
 }
-  //BUTTONS MOVE COUNTER BACK-- AND FORTH++
-  //ALL BUTTONS MOVE COUNTER BACK=0, FORWARD=9
+function down(counter){
+
+  switch (counter) {
+    case 0:
+      var move1 = board[6][3];
+      board[4][3] = board[6][3];
+      board[4][3] = '';
+      $('.chessRow_four').find('#r4c3').removeClass().css('background-color','');  //ADDS TO EVERY COL4
+      $('.chessRow_six').find('#r6c3').addClass(move1).css('background-color','');
+      console.log(move1);
+      break;
+    case 1:
+      var move2 = board[0][6];
+      board[2][5] = board[0][6];
+      board[2][5] = '';
+      $('.chessRow_two').find('#r2c5').removeClass().css('background-color','');
+      $('.chessRow_zero').find('#r0c6').addClass(move2).css('background-color','');
+      console.log(move2);
+      break;
+    case 2:
+      var move3 = board[6][2];
+      board[4][2] = board[6][2];
+      board[4][2] = '';
+      $('.chessRow_four').find('#r4c2').removeClass().css('background-color','');
+      $('.chessRow_six').find('#r6c2').addClass(move3).css('background-color','');
+      break;
+    case 3:
+      var move4 = board[1][4];
+      board[2][4] = board[1][4];
+      board[2][4] = '';
+      $('.chessRow_two').find('#r2c4').removeClass().css('background-color','');
+      $('.chessRow_one').find('#r1c4').addClass("flaticon-chess-pawn p1").css('background-color','');
+      break;
+//    5)  [6][6] --> [5][6]
+    case 4:
+      var move5 = board[6][6];
+      board[5][6] = board[6][6];
+      board[5][6] = '';
+      $('.chessRow_five').find('#r5c6').removeClass().css('background-color','');
+      $('.chessRow_six').find('#r6c6').addClass("flaticon-chess-pawn p2").css('background-color','');
+      break;
+//    6)  [1][3] --> [3][3]
+    case 5:
+      var move6 = board[1][3];
+      board[3][3] = board[1][3];
+      board[3][3] = '';
+      $('.chessRow_three').find('#r3c3').removeClass().css('background-color','');
+      $('.chessRow_one').find('#r1c3').addClass(move6).css('background-color','');
+      break;
+//    7)  [7][5] --> [6][6]
+    case 6:
+      var move7 = board[7][5];
+      board[6][6] = board[7][5];
+      board[6][6] = '';
+      $('.chessRow_six').find('#r6c6').removeClass().css('background-color','');
+      $('.chessRow_seven').find('#r7c5').addClass(move7).css('background-color','');
+      break;
+//    8)  [0][5] --> [1][4]
+    case 7:
+      var move8 = board[0][5];
+      board[1][4] = board[0][5];
+      board[1][4] = '';
+      $('.chessRow_one').find('#r1c4').removeClass().css('background-color','');
+      $('.chessRow_zero').find('#r0c5').addClass(move8).css('background-color','');
+      break;
+//    9)  [7][6] --> [5][5]
+    case 8:
+      var move9 = board[7][6];
+      board[5][5] = board[7][6];
+      board[5][5] = '';
+      $('.chessRow_five').find('#r5c5').removeClass().css('background-color','');
+      $('.chessRow_seven').find('#r7c6').addClass(move9).css('background-color','');
+      break;
+  }
+}
+
 
 
 
