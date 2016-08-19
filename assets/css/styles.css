@@ -8,7 +8,7 @@ body {
   font-size: 1em;
   padding: 0;
   margin: 0;
-  background: #b18c82;
+  background: #FFEEDD;
   text-align: center;
   font-family: 'helvetica', sans-serif; }
 
@@ -24,9 +24,9 @@ body {
   .main i {
     padding: 2.4em 1.1em 1em 0.6em; }
   .main .p2 {
-    color: white; }
+    color: #AA7139; }
   .main .p1 {
-    color: black; }
+    color: #012b35; }
 
 .cRow {
   display: flex; }
@@ -63,7 +63,7 @@ body {
 .box {
   padding-top: 0.5em;
   padding-right: 0.1em;
-  background-color: #62b7d1;
+  background-color: #BED5DB;
   margin: -4px;
   width: 5em;
   height: 5em;
@@ -73,7 +73,7 @@ body {
 .boxx {
   padding-top: 0.5em;
   padding-right: 0.1em;
-  background-color: #b7d162;
+  background-color: #ffffff;
   margin: -4px;
   width: 5em;
   height: 5em;
@@ -83,11 +83,12 @@ body {
 #forwardMove, #backwardMove, #backwardAll, #forwardAll {
   margin: 0 1em;
   box-shadow: -5px 2.5px 1px 0px black;
-  background-color: #62b7d1;
+  background-color: #838E90;
   border-radius: 50%;
   border: 2px solid white; }
   #forwardMove i, #backwardMove i, #backwardAll i, #forwardAll i {
-    margin: .5em; }
+    margin: .5em;
+    color: white; }
 
 #backwardMove, #backwardAll {
   box-shadow: 5px 2.5px 1px 0px black; }
